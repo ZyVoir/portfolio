@@ -9,7 +9,6 @@ type Props = {
 };
 
 const SidebarMenu = ({ icon, text, path, isMenuOpened }: Props) => {
-	console.log(window.location.pathname);
 	return (
 		<li className="flex flex-col justify-center relative group">
 			<NavLink to={path.toString()} className={"link"}>
