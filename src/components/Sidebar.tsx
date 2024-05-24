@@ -115,7 +115,7 @@ const Sidebar = () => {
 						<SidebarMenu
 							icon={<AiOutlineHome size={25} className="min-w-max" />}
 							text={"Home"}
-							path={"/"}
+							path={"/Portofolio"}
 							isMenuOpened={isMenuOpened}
 						/>
 
@@ -134,19 +134,19 @@ const Sidebar = () => {
 						<SidebarMenu
 							icon={<GoBook size={25} className="min-w-max" />}
 							text={"Education"}
-							path={"/Education"}
+							path={"/Portofolio/Education"}
 							isMenuOpened={isMenuOpened}
 						/>
 						<SidebarMenu
 							icon={<GoBriefcase size={25} className="min-w-max" />}
 							text={"Experience"}
-							path={"/Experience"}
+							path={"/Portofolio/Experience"}
 							isMenuOpened={isMenuOpened}
 						/>
 						<SidebarMenu
 							icon={<GoProjectRoadmap size={25} className="min-w-max" />}
 							text={"Projects"}
-							path={"/Projects"}
+							path={"/Portofolio/Projects"}
 							isMenuOpened={isMenuOpened}
 						/>
 
@@ -165,7 +165,7 @@ const Sidebar = () => {
 						<SidebarMenu
 							icon={<FiMessageSquare size={25} className="min-w-max" />}
 							text={"Send Message"}
-							path={"/SendMsg"}
+							path={"/Portofolio/SendMsg"}
 							isMenuOpened={isMenuOpened}
 						/>
 
