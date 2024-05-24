@@ -2,7 +2,17 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				montserrat: ["Montserrat", "sans-serif"],
+				poppins: ["Poppins", "sans-serif"],
+				teachers: ["Teachers", "serif"],
+			},
+			colors: {
+				primary: "#0E0E0E",
+				secondary: "#242527",
+			},
+		},
 	},
-	plugins: [],
+	plugins: [require("tailwind-scrollbar")],
 };
