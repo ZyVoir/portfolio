@@ -4,7 +4,7 @@ import Education from "./pages/Education";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import SendMsg from "./pages/SendMsg";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
