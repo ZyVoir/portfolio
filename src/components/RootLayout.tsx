@@ -7,9 +7,9 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
 	return (
-		<div className="flex gap-5 flex-col md:flex-row">
+		<div className="flex gap-0 flex-col md:flex-row md:gap-0 md:items-start">
 			<Sidebar />
-			<main className="max-w-5xl flex-1  py-4">{children}</main>
+			<main className="flex-1 py-4 ">{children}</main>
 		</div>
 	);
 };

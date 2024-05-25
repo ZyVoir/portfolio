@@ -19,7 +19,11 @@ import SidebarMenu from "./SidebarMenu";
 
 const Sidebar = () => {
 	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-	const [isMenuOpened, setIsMenuOpened] = useState(!isMobile);
+
+	const [isMenuOpened, setIsMenuOpened] = useState(() => {
+		const storedValue = window.localStorage.getItem("isMenuOpened");
+		return storedValue !== null ? JSON.parse(storedValue) : !isMobile;
+	});
 
 	const SidebarAnimation = isMobile
 		? {
@@ -56,10 +60,14 @@ const Sidebar = () => {
 		  };
 
 	useEffect(() => {
-		isMobile ? setIsMenuOpened(false) : setIsMenuOpened(true);
+		isMobile && setIsMenuOpened(false);
 	}, [isMobile]);
 
-	function ToogleMenu() {
+	useEffect(() => {
+		window.localStorage.setItem("isMenuOpened", JSON.stringify(isMenuOpened));
+	}, [isMenuOpened]);
+
+	function toggleMenu() {
 		setIsMenuOpened(!isMenuOpened);
 	}
 
@@ -68,7 +76,7 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div>
+		<div className="fixed top-0 left-0  bg-primary w-full m-0 p-0 md:w-fit md:sticky md:top-0 md:bg-transparent">
 			{/* black background */}
 			<div
 				onClick={() => {
@@ -83,7 +91,7 @@ const Sidebar = () => {
 			<motion.div
 				variants={SidebarAnimation}
 				animate={isMenuOpened ? "open" : "closed"}
-				className="bg-secondary text-white shadow-xl z-[99] w-[16rem] max-w-[16rem] h-screen overflow-hidden md:relative fixed
+				className=" bg-secondary text-white shadow-xl z-[99] w-[16rem] max-w-[16rem] h-fit min-h-screen overflow-hidden md:relative fixed
                 p-[15px]"
 			>
 				{/* logo  */}
@@ -102,7 +110,7 @@ const Sidebar = () => {
 							transition={{ duration: 0.3 }}
 							className="flex flex-col whitespace-pre"
 						>
-							<h1 className="text-[14px] font-bold font-bold">William</h1>
+							<h1 className="text-[14px] font-bold">William</h1>
 							<h2 className="text-[10px] font-light">William092@binus.ac.id</h2>
 						</motion.div>
 					)}
@@ -117,6 +125,8 @@ const Sidebar = () => {
 							text={"Home"}
 							path={"/"}
 							isMenuOpened={isMenuOpened}
+							isMobile={isMobile}
+							onMenuClick={toggleMenu}
 						/>
 
 						{isMenuOpened && (
@@ -136,18 +146,24 @@ const Sidebar = () => {
 							text={"Education"}
 							path={"/Education"}
 							isMenuOpened={isMenuOpened}
+							isMobile={isMobile}
+							onMenuClick={toggleMenu}
 						/>
 						<SidebarMenu
 							icon={<GoBriefcase size={25} className="min-w-max" />}
 							text={"Experience"}
 							path={"/Experience"}
 							isMenuOpened={isMenuOpened}
+							isMobile={isMobile}
+							onMenuClick={toggleMenu}
 						/>
 						<SidebarMenu
 							icon={<GoProjectRoadmap size={25} className="min-w-max" />}
 							text={"Projects"}
 							path={"/Projects"}
 							isMenuOpened={isMenuOpened}
+							isMobile={isMobile}
+							onMenuClick={toggleMenu}
 						/>
 
 						{isMenuOpened && (
@@ -167,6 +183,8 @@ const Sidebar = () => {
 							text={"Send Message"}
 							path={"/SendMsg"}
 							isMenuOpened={isMenuOpened}
+							isMobile={isMobile}
+							onMenuClick={toggleMenu}
 						/>
 
 						{isMenuOpened && (
@@ -207,7 +225,7 @@ const Sidebar = () => {
 						}
 						transition={{ duration: 0.3 }}
 						className="absolute bottom-[30px] right-[20px] cursor-pointer"
-						onClick={ToogleMenu}
+						onClick={toggleMenu}
 					>
 						<IoIosArrowBack className="w-7 h-auto" />
 					</motion.div>
@@ -215,10 +233,15 @@ const Sidebar = () => {
 			</motion.div>
 
 			<div
-				className="m-3 md:hidden text-white "
+				className="m-3 md:hidden text-white flex flex-row items-center gap-6 "
 				onClick={() => setIsMenuOpened(true)}
 			>
-				<LuMenu size={25} />
+				<LuMenu size={32} />
+				{isMobile && (
+					<div className="flex flex-row justify-end items-center flex-1">
+						<img src={logo} alt="" className="w-[35px]" />
+					</div>
+				)}
 			</div>
 		</div>
 	);
