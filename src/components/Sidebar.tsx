@@ -19,7 +19,6 @@ import SidebarMenu from "./SidebarMenu";
 
 const Sidebar = () => {
 	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
 	const [isMenuOpened, setIsMenuOpened] = useState(() => {
 		const storedValue = window.localStorage.getItem("isMenuOpened");
 		return storedValue !== null ? JSON.parse(storedValue) : !isMobile;
@@ -29,7 +28,7 @@ const Sidebar = () => {
 		? {
 				open: {
 					x: 0,
-					width: "16rem",
+					width: "14rem",
 					transition: {
 						damping: 40,
 						delay: 0,
@@ -46,7 +45,7 @@ const Sidebar = () => {
 		  }
 		: {
 				open: {
-					width: "16rem",
+					width: "14rem",
 					transition: {
 						damping: 40,
 					},
@@ -76,7 +75,7 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className="fixed top-0 left-0  bg-primary w-full m-0 p-0 md:w-fit md:sticky md:top-0 md:bg-transparent">
+		<div className="fixed top-0 left-0 bg-primary w-full m-0 p-0 md:w-fit md:sticky md:top-0 md:bg-transparent">
 			{/* black background */}
 			<div
 				onClick={() => {
@@ -91,8 +90,8 @@ const Sidebar = () => {
 			<motion.div
 				variants={SidebarAnimation}
 				animate={isMenuOpened ? "open" : "closed"}
-				className=" bg-secondary text-white shadow-xl z-[99] w-[16rem] max-w-[16rem] h-fit min-h-screen overflow-hidden md:relative fixed
-                p-[15px]"
+				className=" bg-secondary text-white shadow-xl z-[99] w-[16rem] max-w-[16rem] h-fit min-h-screen overflow-hidden md:relative 
+               	fixed p-[15px]"
 			>
 				{/* logo  */}
 				<div className="flex flex-row items-center gap-2.5 font-medium border-b border-slate-300 py-3">
@@ -232,17 +231,22 @@ const Sidebar = () => {
 				)}
 			</motion.div>
 
-			<div
-				className="m-3 md:hidden text-white flex flex-row items-center gap-6 "
-				onClick={() => setIsMenuOpened(true)}
-			>
-				<LuMenu size={32} />
-				{isMobile && (
-					<div className="flex flex-row justify-end items-center flex-1">
-						<img src={logo} alt="" className="w-[35px]" />
+			{isMobile && (
+				<div className="m-3 md:hidden text-white flex flex-row items-center gap-6 ">
+					{" "}
+					<div onClick={() => setIsMenuOpened(true)}>
+						<LuMenu size={32} />
 					</div>
-				)}
-			</div>
+					<div className="flex flex-row justify-end items-center flex-1">
+						<img
+							src={logo}
+							alt=""
+							className="w-[35px] cursor-pointer"
+							onClick={scrollToTop}
+						/>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };

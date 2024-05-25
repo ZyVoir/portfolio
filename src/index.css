@@ -23,3 +23,14 @@
 .active {
 	@apply bg-slate-700 text-slate-300;
 }
+
+.gradient-btn {
+	background: linear-gradient(to right, #eedd44, #e05900);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	line-height: 65px;
+}
+
+.imgCarousel {
+	@apply w-auto h-[60px] px-[15px] inline-block;
+}
