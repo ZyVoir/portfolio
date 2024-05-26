@@ -14,12 +14,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
 	const [text] = useTypewriter({
-		words: [
-			"a Designer",
-			"a Developer",
-			"a Mobile Enthusiast",
-			"an Undergraduate Student",
-		],
+		words: ["Student", "Developer", "Mobile Enthusiast", "Student"],
 		loop: true,
 		typeSpeed: 120,
 		delaySpeed: 230,
@@ -37,12 +32,12 @@ const Home = () => {
 						<p className="text-[24px] md:text-[32px] font-semibold">
 							Hello there 🙌 ! The name's
 						</p>
-						<h1 className="text-[48px] md:text-[65px] font-poppins gradient-btn font-semibold">
+						<h1 className="text-[48px] md:text-[65px] font-poppins gradient-text font-semibold">
 							William.
 						</h1>
 						{/* typing effect text  */}
 						<h1 className="text-[22px] normal-case min-h-[55.3px]">
-							I'm <span>{text}</span>
+							I'm a <span className="gradient-text">{text}</span>
 							<span>
 								<Cursor />
 							</span>
@@ -110,17 +105,23 @@ const Home = () => {
 				</div>
 
 				{/* current project highlight */}
-				<div className="mt-[80px] flex flex-col gap-[20px]">
-					<h1 className="font-bold text-[24px] md:self-start self-center">
+				<div className="mt-[80px] flex flex-col gap-[20px] relative">
+					<h1 className="font-bold text-[24px] md:self-start self-center z-[-2]">
 						Currently Working on
 					</h1>
-					<img
-						src={CurrentProject}
-						alt=""
-						className="max-w-full min-w-[250px] mx-[20px] md:mx-0 md:w-full md:min-w-[35%] h-auto rounded-md border-white border-4"
-					/>
-					<h1 className="text-[22px] self-center md:self-start">Rentify</h1>
-					<div className="flex flex-row w-fit gap-[20px] rounded-md bg-secondary p-[10px] pr-[17px] self-center md:self-start">
+					<div className="flex flex-col items-center">
+						<div className="md:absolute md:top-0 md:left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-800 rounded-md z[-3]"></div>
+						<img
+							src={CurrentProject}
+							alt=""
+							className="max-w-full min-w-[250px] mx-[20px] md:mx-0 md:w-full md:min-w-[35%] h-auto rounded-md z-[-2]"
+						/>
+					</div>
+
+					<h1 className="text-[16px] md:text-[22px] self-center md:self-start md:absolute md:bottom-[100px] md:left-[25px] z-[1]">
+						Rentify
+					</h1>
+					<div className="flex flex-row w-[fit] gap-[20px] rounded-md bg-secondary p-[8px] pr-[15px] self-center md:self-start md:absolute md:bottom-[20px] md:left-[25px] z-[1]">
 						<img className="h-[50px]" src={Kotlin} alt="" />
 						<img className="h-[50px]" src={Firebase} alt="" />
 					</div>

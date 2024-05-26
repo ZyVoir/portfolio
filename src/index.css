@@ -24,7 +24,7 @@
 	@apply bg-slate-700 text-slate-300;
 }
 
-.gradient-btn {
+.gradient-text {
 	background: linear-gradient(to right, #eedd44, #e05900);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;

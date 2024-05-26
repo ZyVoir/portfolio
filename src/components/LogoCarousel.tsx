@@ -15,8 +15,8 @@ import Unity from "../assets/carousel/Unity.png";
 const LogoCarousel = () => {
 	return (
 		<>
-			<div className="overflow-hidden py-[20px] w-full self-center whitespace-nowrap mx-0 md:m-0">
-				<div className="whitespace-nowrap inline-block animate-carousel">
+			<div className="overflow-hidden py-[20px] w-full self-center whitespace-nowrap mx-0 md:m-0 z-[-1] relative">
+				<div className="whitespace-nowrap inline-block animate-carousel shrink-0">
 					<img className="imgCarousel" src={CSS} alt="CSS" />
 					<img className="imgCarousel" src={Figma} alt="Figma" />
 					<img className="imgCarousel" src={Firebase} alt="Firebase" />
