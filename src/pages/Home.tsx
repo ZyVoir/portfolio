@@ -1,17 +1,24 @@
 import HomeBg from "../components/HomeBg";
-import ProfilePic from "../assets/Picture1.png";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BtnPrimary from "../components/BtnPrimary";
 import LogoCarousel from "../components/LogoCarousel";
-import { Link } from "react-scroll";
+
+import ProfilePic from "../assets/Picture1.png";
 import CurrentProject from "../assets/CurrentProject.png";
 import Picture2 from "../assets/Picture2.jpg";
-import { FaInstagram, FaLinkedin } from "react-icons/fa6";
-import { IoLogoGithub } from "react-icons/io";
+
 import Firebase from "../assets/carousel/Firebase.png";
 import Kotlin from "../assets/carousel/Kotlin.png";
 import Footer from "../components/Footer";
+
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-scroll";
+
+import { FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { MdDownload } from "react-icons/md";
+import pdfCV from "../../public/CV.pdf";
 
 const Home = () => {
 	const [text] = useTypewriter({
@@ -59,7 +66,10 @@ const Home = () => {
 						{/* learn more button  */}
 						<Link to="Aboutme" spy={true} smooth={true} offset={-50}>
 							<div className="mt-[10px] w-fit">
-								<BtnPrimary text={"Learn More"} />
+								<BtnPrimary
+									text={"Learn More"}
+									logo={<FaArrowCircleRight size={25} className="text-white" />}
+								/>
 							</div>
 						</Link>
 					</div>
@@ -114,6 +124,19 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
+
+				{/* download cv */}
+				<a
+					className="flex flex-row justify-center self-center mt-[30px]"
+					onClick={() => {}}
+					href={pdfCV}
+					target="_blank"
+				>
+					<BtnPrimary
+						text={"View CV"}
+						logo={<MdDownload size={25} className="text-white" />}
+					></BtnPrimary>
+				</a>
 
 				{/* current project highlight */}
 				<div className="mt-[80px] flex flex-col gap-[20px] relative">
