@@ -13,6 +13,8 @@ import Footer from "../components/Footer";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
+import { useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
@@ -30,6 +32,14 @@ const Home = () => {
 	});
 
 	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+	const scrollToTop = () => {
+		scroll.scrollToTop({ smooth: true });
+	};
+
+	useEffect(() => {
+		scrollToTop();
+	}, []);
 
 	return (
 		<>
@@ -74,7 +84,6 @@ const Home = () => {
 						</Link>
 					</div>
 					<img
-						loading="lazy"
 						src={ProfilePic}
 						alt=""
 						className="max-w-[40%] min-w-[250px] md:min-w-[35%]  h-auto"
@@ -86,7 +95,6 @@ const Home = () => {
 					className="h-fit  mt-[50px] md:mt-[100px] flex md:flex-row flex-col items-center justify-between gap-[30px] md:gap-[20px]"
 				>
 					<img
-						loading="lazy"
 						src={Picture2}
 						alt=""
 						className="max-w-[35%] min-w-[60%] md:min-w-[230px] h-auto rounded-sm"
@@ -146,7 +154,6 @@ const Home = () => {
 					<div className="flex flex-col items-center relative z-[-1]">
 						<div className="md:absolute md:top-0 md:left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-950 rounded-md z[-3]"></div>
 						<img
-							loading="lazy"
 							src={CurrentProject}
 							alt=""
 							className="max-w-full min-w-[250px] mx-[20px] md:mx-0 md:w-full md:min-w-[35%] h-auto rounded-md z-[-2]"
@@ -157,8 +164,8 @@ const Home = () => {
 						Rentify
 					</h1>
 					<div className="flex flex-row w-[fit] gap-[20px] rounded-md bg-secondary p-[8px] pr-[15px] self-center md:self-start md:absolute md:bottom-[20px] md:left-[25px] z-[1]">
-						<img className="h-[50px]" src={Kotlin} alt="" loading="lazy" />
-						<img className="h-[50px]" src={Firebase} alt="" loading="lazy" />
+						<img className="h-[50px]" src={Kotlin} alt="" />
+						<img className="h-[50px]" src={Firebase} alt="" />
 					</div>
 				</div>
 
