@@ -38,6 +38,10 @@ export default {
 					from: { transform: "translateX(0)" },
 					to: { transform: "translateX(-100%)" },
 				},
+				movStar: {
+					from: { transform: "translateY(0px)" },
+					to: { transform: "translateY(-2000px)" },
+				},
 			},
 			animation: {
 				star1: "star 3s linear infinite",
@@ -51,6 +55,9 @@ export default {
 				star9: "star 1.9s linear infinite",
 				star10: "star 2.75s linear infinite",
 				carousel: "carousel 5s linear infinite",
+				stars1: "movStar 50s linear infinite",
+				stars2: "movStar 100s linear infinite",
+				stars3: "movStar 150s linear infinite",
 			},
 		},
 	},

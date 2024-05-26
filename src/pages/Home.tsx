@@ -14,7 +14,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
 	const [text] = useTypewriter({
-		words: ["Student", "Developer", "Mobile Enthusiast", "Student"],
+		words: ["Student", "Developer", "Designer"],
 		loop: true,
 		typeSpeed: 120,
 		delaySpeed: 230,
@@ -36,7 +36,7 @@ const Home = () => {
 							William.
 						</h1>
 						{/* typing effect text  */}
-						<h1 className="text-[22px] normal-case min-h-[55.3px]">
+						<h1 className="text-[22px] normal-case min-h-[70px]">
 							I'm a <span className="gradient-text">{text}</span>
 							<span>
 								<Cursor />
@@ -57,6 +57,7 @@ const Home = () => {
 						</Link>
 					</div>
 					<img
+						loading="lazy"
 						src={ProfilePic}
 						alt=""
 						className="max-w-[40%] min-w-[250px] md:min-w-[35%]  h-auto"
@@ -68,6 +69,7 @@ const Home = () => {
 					className="h-fit  mt-[50px] md:mt-[100px] flex md:flex-row flex-col items-center justify-between gap-[30px] md:gap-[20px]"
 				>
 					<img
+						loading="lazy"
 						src={Picture2}
 						alt=""
 						className="max-w-[35%] min-w-[60%] md:min-w-[230px] h-auto rounded-sm"
@@ -79,8 +81,10 @@ const Home = () => {
 
 						{/* brief description */}
 						<p className="max-w-[60%] md:max-w-full self-center md:self-stretch text-center md:text-justify ">
-							Welcome to my portofolio. This Web Application will guide you
-							through my journey as a UI/UX Designer and Mobile Developer.
+							I'm a sophomore majoring in Mobile Application and technology. I'm
+							constantly exploring the ever-evolving landscape of apps and
+							interfaces. I'm always eager to learn and passionate about the
+							world of codes!
 						</p>
 
 						{/* social media links */}
@@ -109,9 +113,10 @@ const Home = () => {
 					<h1 className="font-bold text-[24px] md:self-start self-center z-[-2]">
 						Currently Working on
 					</h1>
-					<div className="flex flex-col items-center">
-						<div className="md:absolute md:top-0 md:left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-800 rounded-md z[-3]"></div>
+					<div className="flex flex-col items-center relative z-[-1]">
+						<div className="md:absolute md:top-0 md:left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-950 rounded-md z[-3]"></div>
 						<img
+							loading="lazy"
 							src={CurrentProject}
 							alt=""
 							className="max-w-full min-w-[250px] mx-[20px] md:mx-0 md:w-full md:min-w-[35%] h-auto rounded-md z-[-2]"
@@ -122,8 +127,8 @@ const Home = () => {
 						Rentify
 					</h1>
 					<div className="flex flex-row w-[fit] gap-[20px] rounded-md bg-secondary p-[8px] pr-[15px] self-center md:self-start md:absolute md:bottom-[20px] md:left-[25px] z-[1]">
-						<img className="h-[50px]" src={Kotlin} alt="" />
-						<img className="h-[50px]" src={Firebase} alt="" />
+						<img className="h-[50px]" src={Kotlin} alt="" loading="lazy" />
+						<img className="h-[50px]" src={Firebase} alt="" loading="lazy" />
 					</div>
 				</div>
 
