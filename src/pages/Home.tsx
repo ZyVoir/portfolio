@@ -2,9 +2,9 @@ import HomeBg from "../components/HomeBg";
 import BtnPrimary from "../components/BtnPrimary";
 import LogoCarousel from "../components/LogoCarousel";
 
-import ProfilePic from "../assets/Picture1.png";
+import ProfilePic from "../assets/Picture1.webp";
 import CurrentProject from "../assets/CurrentProject.png";
-import Picture2 from "../assets/Picture2.jpg";
+import Picture2 from "../assets/Picture2.webp";
 
 import Firebase from "../assets/carousel/Firebase.png";
 import Kotlin from "../assets/carousel/Kotlin.png";
