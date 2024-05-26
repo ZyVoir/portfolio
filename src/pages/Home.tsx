@@ -11,6 +11,8 @@ import { IoLogoGithub } from "react-icons/io";
 import Firebase from "../assets/carousel/Firebase.png";
 import Kotlin from "../assets/carousel/Kotlin.png";
 import Footer from "../components/Footer";
+import { useMediaQuery } from "react-responsive";
+import { SiPanasonic } from "react-icons/si";
 
 const Home = () => {
 	const [text] = useTypewriter({
@@ -20,6 +22,9 @@ const Home = () => {
 		delaySpeed: 230,
 		deleteSpeed: 80,
 	});
+
+	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
 	return (
 		<>
 			<section className="fixed w-full box-border h-screen top-0 left-0 overflow-hidden z-[-1]">
@@ -27,7 +32,7 @@ const Home = () => {
 			</section>
 			<div className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-0 min-h-screen md:mx-[50px]">
 				{/* hero section */}
-				<div className="h-fit  mt-[40px] md:mt-[20px] flex md:flex-row flex-col-reverse items-center justify-between gap-[30px] md:gap-0">
+				<div className="h-fit  mt-[40px] md:mt-[20px] flex md:flex-row flex-col-reverse items-center justify-between gap-[15px] md:gap-0">
 					<div className="flex flex-col gap-[25px] self-center text-center md:text-left items-center md:items-start">
 						<p className="text-[24px] md:text-[32px] font-semibold">
 							Hello there 🙌 ! The name's
@@ -36,8 +41,11 @@ const Home = () => {
 							William.
 						</h1>
 						{/* typing effect text  */}
-						<h1 className="text-[22px] normal-case min-h-[70px]">
-							I'm a <span className="gradient-text">{text}</span>
+						{isMobile && <h1 className="text-[22px] normal-case">I'm a </h1>}
+
+						<h1 className="text-[22px] normal-case">
+							{!isMobile && <span>I'm a </span>}
+							<span className="gradient-text">{text}</span>
 							<span>
 								<Cursor />
 							</span>
