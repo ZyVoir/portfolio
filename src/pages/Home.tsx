@@ -12,7 +12,6 @@ import Firebase from "../assets/carousel/Firebase.png";
 import Kotlin from "../assets/carousel/Kotlin.png";
 import Footer from "../components/Footer";
 import { useMediaQuery } from "react-responsive";
-import { SiPanasonic } from "react-icons/si";
 
 const Home = () => {
 	const [text] = useTypewriter({
