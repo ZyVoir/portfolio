@@ -19,6 +19,8 @@ export default {
 			},
 			backgroundImage: {
 				star: "linear-gradient(90deg, #fff, transparent)",
+				cardProject:
+					"linear-gradient(180deg, rgba(255, 255, 255, 0) 43%,rgba(0, 0, 0, 1) 110%)",
 			},
 			keyframes: {
 				star: {

@@ -1,16 +1,17 @@
-import CSS from "../assets/carousel/CSS.png";
-import Figma from "../assets/carousel/Figma.png";
-import Firebase from "../assets/carousel/Firebase.png";
-import Flutter from "../assets/carousel/Flutter.png";
-import HTML from "../assets/carousel/HTML.png";
-import JavaScript from "../assets/carousel/JavaScript.png";
-import Kotlin from "../assets/carousel/Kotlin.png";
-import MySQL from "../assets/carousel/MySQL.png";
-import Nodejs from "../assets/carousel/Nodejs.png";
-import React from "../assets/carousel/React.png";
-import tailwind from "../assets/carousel/tailwind.png";
-import TypeScript from "../assets/carousel/TypeScript.png";
-import Unity from "../assets/carousel/Unity.png";
+import CSS from "../assets/carousel/CSS.webp";
+import Figma from "../assets/carousel/Figma.webp";
+import Firebase from "../assets/carousel/Firebase.webp";
+import Flutter from "../assets/carousel/Flutter.webp";
+import HTML from "../assets/carousel/HTML.webp";
+import JavaScript from "../assets/carousel/JavaScript.webp";
+import Kotlin from "../assets/carousel/Kotlin.webp";
+import MySQL from "../assets/carousel/MySQL.webp";
+import Nodejs from "../assets/carousel/Nodejs.webp";
+import React from "../assets/carousel/React.webp";
+import tailwind from "../assets/carousel/tailwind.webp";
+import TypeScript from "../assets/carousel/TypeScript.webp";
+import Unity from "../assets/carousel/Unity.webp";
+import Android from "../assets/carousel/Android.webp";
 
 const LogoCarousel = () => {
 	return (
@@ -65,6 +66,12 @@ const LogoCarousel = () => {
 						alt="TypeScript"
 					/>
 					<img loading="lazy" className="imgCarousel" src={Unity} alt="Unity" />
+					<img
+						loading="lazy"
+						className="imgCarousel"
+						src={Android}
+						alt="Android"
+					/>
 				</div>
 			</div>
 		</>

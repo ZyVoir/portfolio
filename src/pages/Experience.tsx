@@ -26,6 +26,14 @@ const Experience = () => {
 					header={"SMA Bunda Hati Kudus"}
 					subheader={"Dec. 2020 - Jan. 2021"}
 				/>
+
+				<h1 className="text-[24px] font-semibold mt-[40px]">Organization</h1>
+				<Accordion
+					title={"Member of Data Science Club"}
+					content={["Learning Machine Model through video based learning"]}
+					header={"Bina Nusantara University"}
+					subheader={"Mar 2023 - Present"}
+				/>
 			</div>
 			<Footer />
 		</>

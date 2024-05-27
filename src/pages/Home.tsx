@@ -3,17 +3,17 @@ import BtnPrimary from "../components/BtnPrimary";
 import LogoCarousel from "../components/LogoCarousel";
 
 import ProfilePic from "../assets/Picture1.webp";
-import CurrentProject from "../assets/CurrentProject.png";
+import CurrentProject from "../assets/CurrentProject.webp";
 import Picture2 from "../assets/Picture2.webp";
 
-import Firebase from "../assets/carousel/Firebase.png";
-import Kotlin from "../assets/carousel/Kotlin.png";
+import Firebase from "../assets/carousel/Firebase.webp";
+import Kotlin from "../assets/carousel/Kotlin.webp";
 import Footer from "../components/Footer";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
-import { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
@@ -21,6 +21,31 @@ import { IoLogoGithub } from "react-icons/io";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import pdfCV from "../../public/CV.pdf";
+
+const useElementWidth = (ref: React.RefObject<HTMLDivElement>): number => {
+	const [width, setWidth] = useState<number>(0);
+
+	useEffect(() => {
+		const element = ref.current;
+
+		if (!element) return;
+
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (let entry of entries) {
+				setWidth(entry.contentRect.width);
+			}
+		});
+
+		resizeObserver.observe(element);
+
+		return () => {
+			resizeObserver.unobserve(element);
+			resizeObserver.disconnect();
+		};
+	}, []);
+
+	return width;
+};
 
 const Home = () => {
 	const [text] = useTypewriter({
@@ -30,7 +55,11 @@ const Home = () => {
 		delaySpeed: 230,
 		deleteSpeed: 80,
 	});
+	const ref = useRef<HTMLDivElement>(null);
+	const width = useElementWidth(ref);
+	let isChange = useMediaQuery({ query: "(max-width: 766px)" });
 
+	let isChangeLayout = !isChange && width < 650;
 	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
 	const scrollToTop = () => {
@@ -46,14 +75,23 @@ const Home = () => {
 			<section className="fixed w-full box-border h-screen top-0 left-0 overflow-hidden z-[-1]">
 				<HomeBg />
 			</section>
-			<div className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-0 min-h-screen md:mx-[50px]">
+			<div
+				ref={ref}
+				className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-0 min-h-screen md:mx-[50px]"
+			>
 				{/* hero section */}
-				<div className="h-fit  mt-[40px] md:mt-[20px] flex md:flex-row flex-col-reverse items-center justify-between gap-[15px] md:gap-0">
-					<div className="flex flex-col gap-[25px] self-center text-center md:text-left items-center md:items-start">
+				<div
+					className={`h-fit  mt-[40px] md:mt-[20px] flex ${
+						isChangeLayout
+							? "flex-col-reverse gap-[40px]"
+							: "md:flex-row md:gap-0"
+					} flex-col-reverse items-center justify-between gap-[15px] `}
+				>
+					<div className="flex flex-col gap-[25px] self-center text-center md:text-left items-center md:items-start ">
 						<p className="text-[24px] md:text-[32px] font-semibold">
 							Hello there 🙌 ! The name's
 						</p>
-						<h1 className="text-[48px] md:text-[65px] font-poppins gradient-text font-semibold">
+						<h1 className="text-[48px] md:text-[65px] font-poppins gradient-text font-semibold ">
 							William.
 						</h1>
 						{/* typing effect text  */}
@@ -83,11 +121,14 @@ const Home = () => {
 							</div>
 						</Link>
 					</div>
-					<img
-						src={ProfilePic}
-						alt=""
-						className="max-w-[40%] min-w-[250px] md:min-w-[35%]  h-auto"
-					/>
+					<div className="relative w-full h-auto flex flex-row justify-center group">
+						<div className="absolute inset-0.5 rounded-full bg-yellow-300 z-[-1] blur-2xl opacity-20 group-hover:opacity-50 transition duration-300"></div>
+						<img
+							src={ProfilePic}
+							alt=""
+							className="max-w-[75%] md:max-w-[80%] min-w-[20%] md:min-w-[70%] self-center h-auto"
+						/>
+					</div>
 				</div>
 				{/* about me section  */}
 				<div
@@ -136,7 +177,6 @@ const Home = () => {
 				{/* download cv */}
 				<a
 					className="flex flex-row justify-center self-center mt-[30px]"
-					onClick={() => {}}
 					href={pdfCV}
 					target="_blank"
 				>

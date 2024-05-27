@@ -2,11 +2,38 @@ import EduBg from "../components/EduBg";
 import Footer from "../components/Footer";
 import TextBox from "../components/TextBox";
 
-import BHK from "../assets/education/BHK.png";
+import BHK from "../assets/education/BHK.webp";
 import Binus from "../assets/education/Binus.svg";
 
-import { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
+
+import { useMediaQuery } from "react-responsive";
+
+const useElementWidth = (ref: React.RefObject<HTMLDivElement>): number => {
+	const [width, setWidth] = useState<number>(0);
+
+	useEffect(() => {
+		const element = ref.current;
+
+		if (!element) return;
+
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (let entry of entries) {
+				setWidth(entry.contentRect.width);
+			}
+		});
+
+		resizeObserver.observe(element);
+
+		return () => {
+			resizeObserver.unobserve(element);
+			resizeObserver.disconnect();
+		};
+	}, []);
+
+	return width;
+};
 
 const Education = () => {
 	const scrollToTop = () => {
@@ -17,16 +44,29 @@ const Education = () => {
 		scrollToTop();
 	}, []);
 
+	const ref = useRef<HTMLDivElement>(null);
+	const width = useElementWidth(ref);
+	let isMobile = useMediaQuery({ query: "(max-width: 766px)" });
+
+	let isChangeLayout = !isMobile && width < 650;
+
 	return (
 		<>
 			<section className="fixed w-full box-border h-screen top-0 left-0 overflow-hidden z-[-1] ">
 				<EduBg />
 			</section>
-			<div className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-[50px] min-h-[80vh] md:mx-[50px] ">
+			<div
+				ref={ref}
+				className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-[50px] min-h-[80vh] md:mx-[50px] "
+			>
 				<h1 className="text-[24px] font-semibold">Education</h1>
 
 				{/* education grid  */}
-				<div className="grid md:grid-cols-2 gap-[25px] mt-[25px]">
+				<div
+					className={`grid ${
+						isChangeLayout ? "md:grid-cols-1" : "md:grid-cols-2"
+					} gap-[25px] mt-[25px]`}
+				>
 					{/* Binus section  */}
 					<div className="md:h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 grid md:grid-rows-2  gap-[10px] items-center px-[20px] pb-[15px]">
 						<div className="grid sm:grid-cols-3">

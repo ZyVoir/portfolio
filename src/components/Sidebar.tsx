@@ -18,7 +18,8 @@ import { LuMenu } from "react-icons/lu";
 import SidebarMenu from "./SidebarMenu";
 
 const Sidebar = () => {
-	let isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+	let isMobile = !useMediaQuery({ query: "(min-width: 768px)" });
+
 	const [isMenuOpened, setIsMenuOpened] = useState(() => {
 		const storedValue = window.localStorage.getItem("isMenuOpened");
 		return storedValue !== null ? JSON.parse(storedValue) : !isMobile;

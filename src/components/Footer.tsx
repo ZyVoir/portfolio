@@ -3,7 +3,7 @@ import { IoLogoGithub } from "react-icons/io";
 
 const Footer = () => {
 	return (
-		<footer className="w-full mt-[30px] mb-[15px] text-gray-400 px-[20px] md:px-[60px] flex flex-row justify-between items-center">
+		<footer className="w-full mt-[15px] mb-[15px] text-gray-400 px-[20px] md:px-[60px] flex flex-row justify-between items-center">
 			<div>
 				<h1 className="text-[17px] md:text-[20px] align-middle">
 					&copy; William 2024

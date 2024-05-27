@@ -25,10 +25,7 @@
 }
 
 .gradient-text {
-	background: linear-gradient(to right, #eedd44, #e05900);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	line-height: 65px;
+	@apply bg-gradient-to-r from-amber-300 to-red-600 bg-clip-text text-transparent leading-[65px];
 }
 
 .imgCarousel {
