@@ -20,6 +20,9 @@ const SendMsg = () => {
 			.then(
 				() => {
 					toast.success(" Sent Sucessfull");
+					if (form.current) {
+						form.current.reset();
+					}
 				},
 				(error) => {
 					toast.error("Error");
