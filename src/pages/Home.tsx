@@ -119,7 +119,7 @@ const Home = () => {
 									: "md:self-stretch md:text-justify"
 							}    `}
 						>
-							Welcome to my portofolio. This Web Application will guide you
+							Welcome to my portfolio. This Web Application will guide you
 							through my journey as a UI/UX Designer and Mobile Developer.
 						</p>
 
