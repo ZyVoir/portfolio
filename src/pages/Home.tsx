@@ -83,11 +83,17 @@ const Home = () => {
 				<div
 					className={`h-fit  mt-[40px] md:mt-[20px] flex ${
 						isChangeLayout
-							? "flex-col-reverse gap-[40px]"
+							? "flex-col-reverse gap-[40px] "
 							: "md:flex-row md:gap-0"
 					} flex-col-reverse items-center justify-between gap-[15px] `}
 				>
-					<div className="flex flex-col gap-[25px] self-center text-center md:text-left items-center md:items-start ">
+					<div
+						className={`flex flex-col gap-[25px] self-center   ${
+							isChangeLayout || isMobile
+								? "text-center items-center"
+								: "md:text-left md:items-start"
+						} `}
+					>
 						<p className="text-[24px] md:text-[32px] font-semibold">
 							Hello there 🙌 ! The name's
 						</p>
@@ -106,7 +112,13 @@ const Home = () => {
 						</h1>
 
 						{/* brief description */}
-						<p className="max-w-[60%] self-center md:self-stretch text-center md:text-justify">
+						<p
+							className={`max-w-[60%] ${
+								isChangeLayout || isMobile
+									? "self-center text-center"
+									: "md:self-stretch md:text-justify"
+							}    `}
+						>
 							Welcome to my portofolio. This Web Application will guide you
 							through my journey as a UI/UX Designer and Mobile Developer.
 						</p>

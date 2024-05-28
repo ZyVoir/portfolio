@@ -76,7 +76,7 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className="fixed top-0 left-0 bg-primary w-full m-0 p-0 md:w-fit md:sticky md:top-0 md:bg-transparent z-[50]">
+		<div className="fixed top-0 left-0 w-full bg-primary  bg-opacity-85  m-0 p-0 md:w-fit md:sticky md:top-0 md:bg-transparent z-[50]">
 			{/* black background */}
 			<div
 				onClick={() => {

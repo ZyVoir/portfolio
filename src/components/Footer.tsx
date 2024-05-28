@@ -10,7 +10,7 @@ const Footer = () => {
 				</h1>
 
 				<h1 className="md:text-[16px] hidden md:inline-block normal-case">
-					Build with React (TS) and Tailwind CSS
+					Build with React and Tailwind CSS
 				</h1>
 			</div>
 
