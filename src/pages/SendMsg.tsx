@@ -12,6 +12,9 @@ const SendMsg = () => {
 		const serviceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 		const templateID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 		const publicKey: string = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+		console.log(serviceID, templateID, publicKey);
+
 		emailjs
 			.sendForm(serviceID, templateID, form.current as HTMLFormElement, {
 				publicKey: publicKey,
