@@ -138,7 +138,7 @@ const Projects = () => {
 							"a application built for dolls enthusiast to buy and manage dolls"
 						}
 						layoutChange={isChangeLayout}
-						link={"https://github.com/ZyVoir/PuffNPoof-ASG"}
+						link={"https://github.com/ZyVoir/puffnpoof"}
 					/>
 					<ProjectCard
 						image={Rentify}

@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://zyvoir.github.io/Portofolio/",
+	"homepage": "https://zyvoir.github.io/portfolio/",
 	"scripts": {
 		"dev": "vite",
 		"predeploy": "npm run build",
