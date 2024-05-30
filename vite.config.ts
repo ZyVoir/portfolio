@@ -7,7 +7,7 @@ import autoprefixer from "autoprefixer";
 export default defineConfig({
 	plugins: [react()],
 	build: {
-		outDir: "Sdist",
+		outDir: "dist",
 	},
 	base: "/portfolio/",
 });
