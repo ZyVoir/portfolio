@@ -201,7 +201,7 @@ const Home = () => {
 				{/* current project highlight */}
 				<div className="mt-[80px] flex flex-col gap-[20px] relative">
 					<h1 className="font-bold text-[24px] md:self-start self-center z-[-2]">
-						Currently Working on
+						Latest Project
 					</h1>
 					<div className="flex flex-col items-center relative z-[-1]">
 						<div className="md:absolute md:top-0 md:left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-950 rounded-md z[-3]"></div>

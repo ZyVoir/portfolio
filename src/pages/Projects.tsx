@@ -147,7 +147,7 @@ const Projects = () => {
 						content={"an application to rent everyday appliances"}
 						layoutChange={isChangeLayout}
 						link={
-							"https://www.figma.com/design/QbQFW2nBRqmNRYPHILQaeG/MCS---Rentify?node-id=1-2"
+							"https://www.canva.com/design/DAGH0b1sOrg/PpnlL3rC5Mqb5bfYDnpAOw/view?utm_content=DAGH0b1sOrg&utm_campaign=designshare&utm_medium=link&utm_source=editor"
 						}
 					/>
 					<ProjectCard
