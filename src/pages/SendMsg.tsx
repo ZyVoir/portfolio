@@ -10,9 +10,9 @@ const SendMsg = () => {
 	const sendEmail = (e: FormEvent) => {
 		e.preventDefault();
 
-		const serviceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-		const templateID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-		const publicKey: string = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+		const serviceID: string = "service_pz0pybp";
+		const templateID: string = "template_a2d2heg";
+		const publicKey: string = "tTAYhLdh-DRBg8OF9";
 
 		emailjs
 			.sendForm(serviceID, templateID, form.current as HTMLFormElement, {
