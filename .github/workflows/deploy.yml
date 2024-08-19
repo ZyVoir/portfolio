@@ -30,7 +30,7 @@ jobs:
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
       - name: Checking Credential
-        run: echo "${{ secrets.VITE_EMAILJS_SERVICE_ID }} testing"
+        run: echo "$secrets.VITE_EMAILJS_SERVICE_ID testing"
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
         with:
