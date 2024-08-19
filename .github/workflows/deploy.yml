@@ -29,13 +29,15 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
-      - name: Checking Credential
-        run: echo "Service ID ${{ secrets.VITE_EMAILJS_SERVICE_ID }} testing"
+      - name: Print environment variables
+        run: |
+          echo "Service ID: $VITE_EMAILJS_SERVICE_ID"
+          echo "Template ID: $VITE_EMAILJS_TEMPLATE_ID"
+          echo "Public Key: $VITE_EMAILJS_PUBLIC_KEY"
         env:
           VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
-
-      - name: Debug Environment Variables
-        run: printenv | grep VITE
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
