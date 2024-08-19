@@ -29,15 +29,13 @@ jobs:
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
         run: npm run build
 
-      - name: Print environment variables
+      - name: Debug secrets
         run: |
-          echo "Service ID: $VITE_EMAILJS_SERVICE_ID"
-          echo "Template ID: $VITE_EMAILJS_TEMPLATE_ID"
-          echo "Public Key: $VITE_EMAILJS_PUBLIC_KEY"
-        env:
-          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
-          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
-          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          if [ -z "${{ secrets.EMAILJS_SERVICE_ID }}" ]; then
+            echo "EMAILJS_SERVICE_ID is not set"
+          else
+            echo "EMAILJS_SERVICE_ID is set"
+          fi
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
