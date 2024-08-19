@@ -7,6 +7,12 @@ const Experience = () => {
 			<div className="text-white md:mt-[20px] mb-[20px] p-3 md:p-5 mt-[50px] min-h-[80vh] md:mx-[50px] ">
 				<h1 className="text-[24px] font-semibold">Experience</h1>
 				<Accordion
+					title={"Junior Developer"}
+					content={["TBA"]}
+					header={"Apple Developer Academy @BINUS"}
+					subheader={"COHORT 2025 - TBA"}
+				/>
+				<Accordion
 					title={"Part Time Graphic Designer"}
 					content={[
 						"Conceptualizing and creating visually appealing designs for various platforms and mediums",
@@ -15,6 +21,14 @@ const Experience = () => {
 					]}
 					header={"CV. Vicmic Indonesia"}
 					subheader={"May 2023 - Oct. 2023"}
+				/>
+
+				<h1 className="text-[24px] font-semibold mt-[40px]">Organization</h1>
+				<Accordion
+					title={"Member of Data Science Club"}
+					content={["Learning Machine Model through video based learning"]}
+					header={"Bina Nusantara University"}
+					subheader={"Mar 2023 - Present"}
 				/>
 				<Accordion
 					title={"Vice Chairman Division of Arts"}
@@ -25,14 +39,6 @@ const Experience = () => {
 					]}
 					header={"SMA Bunda Hati Kudus"}
 					subheader={"Dec. 2020 - Jan. 2021"}
-				/>
-
-				<h1 className="text-[24px] font-semibold mt-[40px]">Organization</h1>
-				<Accordion
-					title={"Member of Data Science Club"}
-					content={["Learning Machine Model through video based learning"]}
-					header={"Bina Nusantara University"}
-					subheader={"Mar 2023 - Present"}
 				/>
 			</div>
 			<Footer />

@@ -84,8 +84,8 @@ const Education = () => {
 							/>
 
 							<div className="grid grid-cols-2 gap-[10px] ">
-								<TextBox color={"bg-blue-500"} text={"4th Semester"} />
-								<TextBox color={"bg-green-400"} text={"3.95 CGPA"} />
+								<TextBox color={"bg-blue-500"} text={"5th Semester"} />
+								<TextBox color={"bg-green-400"} text={"CGPA : 3.96 / 4.00"} />
 							</div>
 						</div>
 					</div>
