@@ -22,7 +22,6 @@ const Experience = () => {
 					header={"CV. Vicmic Indonesia"}
 					subheader={"May 2023 - Oct. 2023"}
 				/>
-
 				<h1 className="text-[24px] font-semibold mt-[40px]">Organization</h1>
 				<Accordion
 					title={"Member of Data Science Club"}
